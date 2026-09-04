@@ -1,0 +1,25 @@
+{
+  "name": "Vaani AI — संताली–हिंदी",
+  "short_name": "Vaani AI",
+  "description": "Santali Ol Chiki learning, dictionary, translation and Class 1–5 practice. Works offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#f3ead8",
+  "theme_color": "#1b4332",
+  "lang": "hi",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

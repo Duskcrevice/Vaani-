@@ -1,0 +1,12 @@
+.env
+*.pyc
+__pycache__/
+data/teach/index.sqlite
+data/teach/index.sqlite-*
+data/teach/drop/*
+!data/teach/drop/README.txt
+
+.vercel
+
+.env
+

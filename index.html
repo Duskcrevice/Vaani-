@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1b4332" />
+  <meta name="description"
+    content="Vaani AI — संताली ओल चिकि सीखें, हिंदी अनुवाद, शब्दकोश, आवाज़ और कक्षा 1–5 अभ्यास।" />
+  <title>Vaani AI · संताली–हिंदी</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Ol+Chiki:wght@400;700&family=Noto+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=vaani1" />
+</head>
+
+<body>
+  <div class="stage">
+    <div class="frame" id="frame">
+      <div class="frame-bar" aria-hidden="true">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+        <span class="frame-title">Vaani AI</span>
+      </div>
+      <div class="motif"></div>
+      <header class="topbar">
+        <a href="#/" class="logo-link"
+          style="display:flex; align-items:center; text-decoration:none; color:inherit; gap:12px;">
+          <img class="logo" src="assets/logo.png" alt="Vaani AI">
+          <div class="logo-text"><strong>Vaani <span>AI</span></strong><br><small style="opacity:0.7">वाणी · ᱣᱟᱬᱤ · Ol
+              Chiki · कक्षा 1–5</small><br><span style="font-size:0.65rem; color:var(--primary); font-weight:700;">⚡
+              Offline working will be added in future</span></div>
+        </a>
+        <select id="uiLangSelect"
+          style="margin-left:auto; z-index:99; background:var(--forest); border:none; color:#fff; font-weight:600; padding:6px 12px; border-radius:6px; cursor:pointer;">
+          <option value="en">English (En)</option>
+          <option value="hi">हिंदी (Hi)</option>
+          <option value="sat">ᱥᱟᱱᱛᱟᱲᱤ (Sat)</option>
+        </select>
+        <button onclick="
+            localStorage.setItem('vaani_teacher', JSON.stringify({status: 'out', email: ''}));
+            window.location.reload();
+        "
+          style="margin-left:12px; background:var(--primary); color:#fff; padding:6px 12px; border:radius:6px; font-weight:600; border:none; border-radius: 6px; cursor:pointer; font-size:0.85rem;">🔒
+          Logout</button>
+      </header>
+
+      <nav class="desk" aria-label="मुख्य मेनू">
+        <a data-nav="home" href="#/"><span data-i18n="nav_home">Home</span></a>
+        <a data-nav="learn" href="#/learn"><span data-i18n="nav_learn">Learn</span></a>
+        <a data-nav="dictionary" href="#/dictionary"><span data-i18n="nav_dict">Dictionary</span></a>
+        <a data-nav="translate" href="#/translate"><span data-i18n="nav_trans">Translate</span></a>
+        <a data-nav="practice" href="#/practice"><span data-i18n="nav_prac">Practice</span></a>
+        <a data-nav="progress" href="#/progress"><span data-i18n="nav_prog">Progress</span></a>
+      </nav>
+
+      <div id="netBar" role="status">आप ऑफलाइन हैं — पाठ, शब्दकोश और अभ्यास स्थानीय डेटा से चलेंगे।</div>
+
+      <main id="app" tabindex="-1"></main>
+
+      <div
+        style="background-color: var(--card-bg); padding: 12px 20px; font-size: 0.85rem; border-bottom: 2px solid var(--wash); border-radius: 8px; margin: 20px 10px; color: var(--ink-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px;">
+        <span>⚡ <strong style="color:var(--primary)">Notice:</strong> Full Offline capability (Zero Internet Access) is
+          actively under development for a future update!</span>
+        <span>📚 The educational curriculum loaded in this platform is sourced directly from authentic <strong>NCERT
+            Class 1-5 Databases & PDFs</strong> to guarantee absolute fidelity.</span>
+      </div>
+
+      <nav class="bottom" aria-label="मोबाइल नेविगेशन">
+        <a data-nav="home" href="#/"><span class="ico" aria-hidden="true">⌂</span><span
+            data-i18n="nav_home">Home</span></a>
+        <a data-nav="learn" href="#/learn"><span class="ico" aria-hidden="true">ᱚ</span><span
+            data-i18n="nav_learn">Learn</span></a>
+        <a data-nav="dictionary" href="#/dictionary"><span class="ico" aria-hidden="true">अ</span><span
+            data-i18n="nav_dict">Dict</span></a>
+        <a data-nav="translate" href="#/translate"><span class="ico" aria-hidden="true">⇄</span><span
+            data-i18n="nav_trans">Translate</span></a>
+        <a data-nav="practice" href="#/practice"><span class="ico" aria-hidden="true">✎</span><span
+            data-i18n="nav_prac">Practice</span></a>
+        <a data-nav="progress" href="#/progress"><span class="ico" aria-hidden="true">●</span><span
+            data-i18n="nav_prog">Progress</span></a>
+      </nav>
+    </div>
+  </div>
+  <div id="toast" role="status"></div>
+  <script type="module" src="js/app.js?v=vaani_ai_demo_v38"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+ц'<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1b4332" />
+  <meta name="description"
+    content="Vaani AI тАФ рд╕рдВрддрд╛рд▓реА рдУрд▓ рдЪрд┐рдХрд┐ рд╕реАрдЦреЗрдВ, рд╣рд┐рдВрджреА рдЕрдиреБрд╡рд╛рдж, рд╢рдмреНрджрдХреЛрд╢, рдЖрд╡рд╛рдЬрд╝ рдФрд░ рдХрдХреНрд╖рд╛ 1тАУ5 рдЕрднреНрдпрд╛рд╕ред" />
+  <title>Vaani AI ┬╖ рд╕рдВрддрд╛рд▓реАтАУрд╣рд┐рдВрджреА</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Ol+Chiki:wght@400;700&family=Noto+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=vaani1" />
+</head>
+
+<body>
+  <div class="stage">
+    <div class="frame" id="frame">
+      <div class="frame-bar" aria-hidden="true">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+        <span class="frame-title">Vaani AI</span>
+      </div>
+      <div class="motif"></div>
+      <header class="topbar">
+        <a href="#/" class="logo-link"
+          style="display:flex; align-items:center; text-decoration:none; color:inherit; gap:12px;">
+          <img class="logo" src="assets/logo.png" alt="Vaani AI">
+          <div class="logo-text"><strong>Vaani <span>AI</span></strong><br><small style="opacity:0.7">рд╡рд╛рдгреА ┬╖ с▒гс▒Яс▒мс▒д ┬╖ Ol
+              Chiki ┬╖ рдХрдХреНрд╖рд╛ 1тАУ5</small><br><span style="font-size:0.65rem; color:var(--primary); font-weight:700;">тЪб
+              Offline working will be added in future</span></div>
+        </a>
+        <select id="uiLangSelect"
+          style="margin-left:auto; z-index:99; background:var(--forest); border:none; color:#fff; font-weight:600; padding:6px 12px; border-radius:6px; cursor:pointer;">
+          <option value="en">English (En)</option>
+          <option value="hi">рд╣рд┐рдВрджреА (Hi)</option>
+          <option value="sat">с▒ес▒Яс▒▒с▒Ыс▒Яс▒▓с▒д (Sat)</option>
+        </select>
+        <button onclick="
+            localStorage.setItem('vaani_teacher', JSON.stringify({status: 'out', email: ''}));
+            window.location.reload();
+        "
+          style="margin-left:12px; background:var(--primary); color:#fff; padding:6px 12px; font-weight:600; border:none; border-radius: 6px; cursor:pointer; font-size:0.85rem;">ЁЯФТ
+          Logout</button>
+      </header>
+
+      <nav class="desk" aria-label="рдореБрдЦреНрдп рдореЗрдиреВ">
+        <a data-nav="home" href="#/"><span data-i18n="nav_home">Home</span></a>
+        <a data-nav="dictionary" href="#/dictionary"><span data-i18n="nav_dict">Dictionary</span></a>
+        <a data-nav="translate" href="#/translate"><span data-i18n="nav_trans">Translate</span></a>
+      </nav>
+
+      <div id="netBar" role="status">рдЖрдк рдСрдлрд▓рд╛рдЗрди рд╣реИрдВ тАФ рдкрд╛рда, рд╢рдмреНрджрдХреЛрд╢ рдФрд░ рдЕрднреНрдпрд╛рд╕ рд╕реНрдерд╛рдиреАрдп рдбреЗрдЯрд╛ рд╕реЗ рдЪрд▓реЗрдВрдЧреЗред</div>
+
+      <main id="app" tabindex="-1"></main>
+
+      <div
+        style="background-color: var(--card-bg); padding: 12px 20px; font-size: 0.85rem; border-bottom: 2px solid var(--wash); border-radius: 8px; margin: 20px 10px; color: var(--ink-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px;">
+        <span>тЪб <strong style="color:var(--primary)">Notice:</strong> Full Offline capability (Zero Internet Access) is
+          actively under development for a future update!</span>
+        <span>ЁЯУЪ The educational curriculum loaded in this platform is sourced directly from authentic <strong>NCERT
+            Class 1-5 Databases & PDFs</strong> to guarantee absolute fidelity.</span>
+      </div>
+
+      <nav class="bottom" aria-label="рдореЛрдмрд╛рдЗрд▓ рдиреЗрд╡рд┐рдЧреЗрд╢рди">
+        <a data-nav="home" href="#/"><span class="ico" aria-hidden="true">тМВ</span><span
+            data-i18n="nav_home">Home</span></a>
+        <a data-nav="dictionary" href="#/dictionary"><span class="ico" aria-hidden="true">рдЕ</span><span
+            data-i18n="nav_dict">Dict</span></a>
+        <a data-nav="translate" href="#/translate"><span class="ico" aria-hidden="true">тЗД</span><span
+            data-i18n="nav_trans">Translate</span></a>
+      </nav>
+    </div>
+  </div>
+  <div id="toast" role="status"></div>
+  <script type="module" src="js/app.js?v=vaani_ai_demo_v24"></script>
+</body>
+
+</html>! *cascade08!"*cascade08"╫ *cascade08╫█*cascade08█Ъ *cascade08ЪЮ*cascade08Ю╩ *cascade08╩╬*cascade08╬Ё *cascade08Ёо
+*cascade08о
+у
+ *cascade08у
+ф
+*cascade08ф
+ъ *cascade08ъ╧ *cascade08╧╖╖╚ *cascade08╚╒*cascade08╒─ *cascade08─╚╚═ *cascade08═ссД *cascade08ДТ*cascade08Т║ *cascade08║╞╞▀ *cascade08▀М *cascade08МРРТ *cascade08ТЧЧЫ *cascade08ЫЬ*cascade08ЬЮ *cascade08Юааб *cascade08бддж *cascade08жии╡ *cascade08╡╖╖╣ *cascade08╣┴┴╦ *cascade08╦╠*cascade08╠═ *cascade08═╧╧т *cascade08тффх *cascade08хїїЎ *cascade08Ў··О *cascade08ОППУ *cascade08УЪЪЫ *cascade08ЫЬ*cascade08ЬЮ *cascade08Юбб╔ *cascade08╔╬╬Д *cascade08ДЙЙ╞ *cascade08╞╠╠ц *cascade08цю *cascade08
+юё ёў*cascade08
+ў° ° *cascade08
+ Б Бк*cascade08
+к▒ ▒П*cascade08
+П■ ■ *cascade08
+ А АВ
+ВГ ГД*cascade08
+ДЕ ЕИ
+ИН НС
+СТ ТУ*cascade08
+УХ ХШ
+ШЪ ЪЫ
+ЫЭ ЭЮ*cascade08
+ЮЯ Яж
+жз зм
+мн н╣
+╣╗ ╗└
+└├ ├╟
+╟╥ ╥╪
+╪┌ ┌р*cascade08
+рш ш┤ *cascade08┤╬╬╓ *cascade08╓р *cascade08р╢"*cascade08╢"╫# *cascade08╫#■#■#В$ *cascade08В$Й$*cascade08Й$г$ *cascade08г$Є$ *cascade08Є$Щ%Щ%Э% *cascade08Э%д%*cascade08д%Л& *cascade08
+Л&╝& ╝&├&*cascade08├&╬& *cascade08╬&╛' *cascade08╛'╔' *cascade08╔'╩'*cascade08╩'▐' *cascade08▐'▀'*cascade08▀'ц' *cascade082Lfile:///c:/Users/HP/SIH%20antigravity/Vaani-AI/santhali-pathshala/index.html
