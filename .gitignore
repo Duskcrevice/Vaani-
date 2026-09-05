@@ -10,3 +10,10 @@ data/teach/drop/*
 
 .env
 
+
+SHARE.txt
+
+
+*.pdf
+*.zip
+
