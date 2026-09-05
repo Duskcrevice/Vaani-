@@ -803,7 +803,7 @@ function viewShortVideo(lesson) {
   const vidSrc = isLocal ? lesson.video.replace("LOCAL_", "") : `https://www.youtube.com/embed/${lesson.video}?rel=0`;
 
   const vidElem = isLocal
-    ? `<video src="${vidSrc}" controls style="width: 100%; height: auto; max-height: 75vh; border-radius: 8px; background: #000; outline: none; border: 1px solid rgba(255,255,255,0.1);"></video>`
+    ? `<video src="${vidSrc}" controls preload="auto" playsinline style="width: 100%; height: auto; max-height: 75vh; border-radius: 8px; background: #000; outline: none; border: 1px solid rgba(255,255,255,0.1);"></video>`
     : `<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: #000;">
          <iframe src="${vidSrc}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </div>`;
