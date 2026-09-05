@@ -10260,7 +10260,7 @@ export const NCERT_DATA = [
             "en": "My Bicycle",
             "hi": "अध्याय 1",
             "sat": "अध्याय 1",
-            "video": "Xh0l0oJ9eW0",
+            "video": "LOCAL_assets/c2_eng_ch1.mp4",
             "pdf": "",
             "pdf_hi": "",
             "flashcards": [
